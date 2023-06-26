@@ -1,0 +1,310 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+:root {
+	/* ==== Colors ===== */
+	--body-color: rgba(0, 176, 255, .7);
+	--sidebar-color: #c898ebfa;
+	--primary-color-light: #f6f5ff;
+	--primary-color: #d7c0ae;
+	--toggle-color: rgba(30, 30, 30, 255);
+	--toggle-color-light: #9babb8;
+	--text-color: white;
+	--backgradient : linear-gradient(#0c1445, #4c408e, #5c54a4);
+
+	/* ==== Trasitions ===== */
+	--trans-03: all 0.2s ease;
+	--trans-02: all 0.3s ease;
+	--trans-04: all 0.4s ease;
+	--trans-05: all 0.5s ease;
+}
+body {
+	background: var(--backgradient);
+}
+.star{
+	position:absolute;
+	top:10%;
+	right:50%;
+	background-image: url(./Images/star.svg);
+    background-size: cover;
+	width: 20px;
+	height: 20px;
+}
+
+/* ======= Sidebar CSS ========= */
+
+.sidebar {
+	position: fixed;
+	height: 100vh;
+	width: 200px;
+	top: 0;
+	left: 0;
+	background-color: white;
+	transition: var(--trans-05);
+}
+
+.sidebar header {
+	position: relative;
+}
+.sidebar .logo {
+	display: flex;
+	padding: 20px;
+}
+.sidebar .logo img {
+	display: flex;
+	width: 50px;
+	height: 50px;
+	border-radius: 6px;
+}
+.sidebar .logo span {
+	display: flex;
+	flex-direction: column;
+	padding-left: 20px;
+	justify-content: center;
+	align-items: center;
+}
+.sidebar header .toggle {
+	position: absolute;
+	top: 50%;
+	right: -15px;
+	transform: translateY(-50%);
+	height: 25px;
+	width: 25px;
+	font-size: 20px;
+	background-color: var(--toggle-color);
+	color: var(--text-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+}
+
+.sidebar li{
+	list-style: none;
+	height: 50px;
+	margin-top: 10px;
+    padding-left:10px;
+	background-color: white;
+	display: flex;
+	align-items: center;
+    transition:var(--trans-03);
+}
+.sidebar li:hover {
+    border-radius:6px;
+	box-shadow: 0px 1px 1px 1px;
+    background:var(--sidebar-color);
+}
+.sidebar li a:hover {
+	color: black;
+}
+.sidebar li .icon {
+	font-size: 20px;
+	margin-right: 20px;
+}
+.sidebar .home{
+    background: var(--primary-color-light);
+    margin-bottom: 30px;
+}
+.sidebar li .icon,
+.sidebar li a {
+	text-decoration: none;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	border-radius: 6px;
+	transition: var(--trans-02);
+}
+
+.menu-bar .mode .moon-sun{
+	height: 20px;
+	width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-bar .mode{
+    background:var(--primary-color-light)
+}
+.menu-bar .mode i{
+    position: absolute;
+}
+
+
+/* After Toggle */
+.sidebar.close{
+	width: 80px;
+}
+
+.sidebar.close .text{
+	opacity:0;
+	overflow: hidden;
+}
+.sidebar.close .icon,
+.sidebar.close .moon-sun{
+	margin-left:20px;
+}
+
+/* ==== SideBar Right ==== */
+.Rightsidebar {
+	position: fixed;
+	height: 100vh;
+	width: 200px;
+	top: 0;
+	right: 0;
+	background-color: white;
+	transition: var(--trans-05);
+
+}
+.Rightsidebar header {
+	position: relative;
+}
+.Rightsidebar .logo {
+	display: flex;
+	padding: 20px;
+}
+.Rightsidebar .logo img {
+	display: flex;
+	width: 50px;
+	height: 50px;
+	border-radius: 6px;
+}
+.Rightsidebar .logo span {
+	display: flex;
+	flex-direction: column;
+	padding-left: 20px;
+	justify-content: center;
+	align-items: center;
+}
+.Rightsidebar header .toggle {
+	position: absolute;
+	top: 50%;
+	left: -15px;
+	transform: translateY(-50%);
+	height: 25px;
+	width: 25px;
+	font-size: 20px;
+	background-color: var(--toggle-color);
+	color: var(--text-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+}
+
+
+/* .Rightsidebar .menu-bar{
+    display:flex;
+    flex-wrap:wrap;
+    height:calc(100% - 70px);
+    justify-content: center;
+    align-items: center;
+} */
+.Rightsidebar li{
+	list-style: none;
+	height: 50px;
+	margin-top: 10px;
+    padding-left:10px;
+	background-color: white;
+	display: flex;
+	align-items: center;
+    transition:var(--trans-03);
+}
+.Rightsidebar li:hover {
+    border-radius:6px;
+	box-shadow: 0px 1px 1px 1px;
+    background:var(--sidebar-color);
+}
+.Rightsidebar li a:hover {
+	color: black;
+}
+.Rightsidebar li .icon {
+	font-size: 20px;
+	margin-right: 20px;
+}
+.Rightsidebar .home{
+    background: var(--primary-color-light);
+    margin-bottom: 30px;
+}
+.Rightsidebar li .icon,
+.Rightsidebar li a {
+	text-decoration: none;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	border-radius: 6px;
+	transition: var(--trans-02);
+}
+.Rightsidebar.close{
+	width: 80px;
+}
+.Rightsidebar.close .text{
+	opacity:0;
+}
+.Rightsidebar.close .icon{
+	margin-left:20px;
+}
+
+
+
+/* ======= Calculator CSS ========= */
+
+.wrapper {
+	width: 100%;
+	height: 100vh;
+	margin: 0px;
+	display: flex;
+	z-index: 100;
+	align-items: center;
+	justify-content: center;
+}
+.calculator {
+	border: 2px solid black;
+	border-radius: 20px;
+	background-color: #5c54a4;
+}
+.calculator form {
+	border-radius: 20px;
+	display: grid;
+	padding: 20px;
+	grid-template-columns: repeat(4, 50px);
+	grid-auto-rows: minmax(50px, auto);
+	grid-row-gap: 10px;
+	grid-column-gap: 10px;
+	grid-template-areas:
+		"header header header header"
+		"- - - -"
+		"- - - -"
+		"- - - -"
+		"- - - -"
+		"-- -- equal equal";
+
+}
+
+.calculator form input:hover {
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+		0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.calculator form input {
+	border-radius: 10px;
+	background:var(--sidebar-color);
+	transition: var(--trans-05);
+}
+.calculator form input:hover{
+	border-radius:20px;
+	background:rgb(247, 100, 218);
+}
+.display {
+	border: none;
+	background: transparent;
+	padding: 0px 20px;
+	text-align: right;
+	color: white;
+	font-size: 30px;
+	font-family: Belanosima;
+	grid-area: header;
+}
+
+#equal {
+	grid-area: equal;
+}
