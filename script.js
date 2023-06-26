@@ -19,7 +19,6 @@ const body=document.querySelectorAll('body');
 
 
 
-
 function updateDisplay(value) {
 	document.getElementById("display").value += value;
 }

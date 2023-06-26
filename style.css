@@ -4,14 +4,15 @@
 }
 :root {
 	/* ==== Colors ===== */
-	--body-color: rgba(0, 176, 255, .7);
+	--body-color: rgba(0, 176, 255, 0.7);
 	--sidebar-color: #c898ebfa;
 	--primary-color-light: #f6f5ff;
 	--primary-color: #d7c0ae;
 	--toggle-color: rgba(30, 30, 30, 255);
 	--toggle-color-light: #9babb8;
 	--text-color: white;
-	--backgradient : linear-gradient(#0c1445, #4c408e, #5c54a4);
+	--button-color:rgb(85 ,26 ,139);
+	--backgradient: linear-gradient(#0c1445, #4c408e, #5c54a4);
 
 	/* ==== Trasitions ===== */
 	--trans-03: all 0.2s ease;
@@ -22,12 +23,13 @@
 body {
 	background: var(--backgradient);
 }
-.star{
-	position:absolute;
-	top:10%;
-	right:50%;
-	background-image: url(./Images/star.svg);
-    background-size: cover;
+.star {
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	z-index: 1;
+	background: url(./Images/star.svg) repeat top center;
+	background-size: cover;
 	width: 20px;
 	height: 20px;
 }
@@ -40,6 +42,7 @@ body {
 	width: 200px;
 	top: 0;
 	left: 0;
+	z-index:100;
 	background-color: white;
 	transition: var(--trans-05);
 }
@@ -67,10 +70,10 @@ body {
 .sidebar header .toggle {
 	position: absolute;
 	top: 50%;
-	right: -15px;
+	right: -30px;
 	transform: translateY(-50%);
-	height: 25px;
-	width: 25px;
+	height: 40px;
+	width: 40px;
 	font-size: 20px;
 	background-color: var(--toggle-color);
 	color: var(--text-color);
@@ -80,20 +83,22 @@ body {
 	border-radius: 50%;
 }
 
-.sidebar li{
+.sidebar li {
 	list-style: none;
 	height: 50px;
 	margin-top: 10px;
-    padding-left:10px;
+	padding-left: 10px;
 	background-color: white;
+	color:var(--button-color);
+	fill:var(--button-color);
 	display: flex;
 	align-items: center;
-    transition:var(--trans-03);
+	transition: var(--trans-03);
 }
 .sidebar li:hover {
-    border-radius:6px;
+	border-radius: 6px;
 	box-shadow: 0px 1px 1px 1px;
-    background:var(--sidebar-color);
+	background: var(--sidebar-color);
 }
 .sidebar li a:hover {
 	color: black;
@@ -102,48 +107,53 @@ body {
 	font-size: 20px;
 	margin-right: 20px;
 }
-.sidebar .home{
-    background: var(--primary-color-light);
-    margin-bottom: 30px;
+.sidebar .home {
+	background: var(--primary-color-light);
+	margin-bottom: 30px;
 }
 .sidebar li .icon,
 .sidebar li a {
 	text-decoration: none;
 	height: 100%;
 	display: flex;
+	
 	align-items: center;
 	border-radius: 6px;
 	transition: var(--trans-02);
 }
-
-.menu-bar .mode .moon-sun{
+.menubar .mode .mode-switch:hover{
+	cursor:pointer;
+}
+.menu-bar .mode .moon-sun {
 	height: 20px;
 	width: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	margin-right:20px;
+	fill:var(--button-color);
+	justify-content: center;
+	align-items: center;
 }
-.menu-bar .mode{
-    background:var(--primary-color-light)
+.menu-bar .mode i {
+	position: absolute;
 }
-.menu-bar .mode i{
-    position: absolute;
-}
-
 
 /* After Toggle */
-.sidebar.close{
+.sidebar.close {
 	width: 80px;
 }
 
-.sidebar.close .text{
-	opacity:0;
+.sidebar.close .text {
+	opacity: 0;
 	overflow: hidden;
 }
 .sidebar.close .icon,
-.sidebar.close .moon-sun{
-	margin-left:20px;
+.sidebar.close .moon-sun {
+	margin-left: 20px;
 }
+
+
+
+
 
 /* ==== SideBar Right ==== */
 .Rightsidebar {
@@ -152,9 +162,9 @@ body {
 	width: 200px;
 	top: 0;
 	right: 0;
+	z-index:100;
 	background-color: white;
 	transition: var(--trans-05);
-
 }
 .Rightsidebar header {
 	position: relative;
@@ -179,10 +189,10 @@ body {
 .Rightsidebar header .toggle {
 	position: absolute;
 	top: 50%;
-	left: -15px;
+	left: -30px;
 	transform: translateY(-50%);
-	height: 25px;
-	width: 25px;
+	height: 40px;
+	width: 40px;
 	font-size: 20px;
 	background-color: var(--toggle-color);
 	color: var(--text-color);
@@ -192,39 +202,37 @@ body {
 	border-radius: 50%;
 }
 
-
-/* .Rightsidebar .menu-bar{
-    display:flex;
-    flex-wrap:wrap;
-    height:calc(100% - 70px);
-    justify-content: center;
-    align-items: center;
-} */
-.Rightsidebar li{
+.Rightsidebar li {
 	list-style: none;
 	height: 50px;
 	margin-top: 10px;
-    padding-left:10px;
+	padding-left: 10px;
 	background-color: white;
 	display: flex;
 	align-items: center;
-    transition:var(--trans-03);
+	transition: var(--trans-03);
 }
 .Rightsidebar li:hover {
-    border-radius:6px;
+	border-radius: 6px;
 	box-shadow: 0px 1px 1px 1px;
-    background:var(--sidebar-color);
+	background: var(--sidebar-color);
 }
 .Rightsidebar li a:hover {
 	color: black;
+}
+#rlogo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
 }
 .Rightsidebar li .icon {
 	font-size: 20px;
 	margin-right: 20px;
 }
-.Rightsidebar .home{
-    background: var(--primary-color-light);
-    margin-bottom: 30px;
+.Rightsidebar .home {
+	background: var(--primary-color-light);
+	margin-bottom: 30px;
 }
 .Rightsidebar li .icon,
 .Rightsidebar li a {
@@ -235,17 +243,15 @@ body {
 	border-radius: 6px;
 	transition: var(--trans-02);
 }
-.Rightsidebar.close{
+.Rightsidebar.close {
 	width: 80px;
 }
-.Rightsidebar.close .text{
-	opacity:0;
+.Rightsidebar.close .text {
+	opacity: -0;
 }
-.Rightsidebar.close .icon{
-	margin-left:20px;
+.Rightsidebar.close .icon {
+	margin-left: 20px;
 }
-
-
 
 /* ======= Calculator CSS ========= */
 
@@ -254,12 +260,12 @@ body {
 	height: 100vh;
 	margin: 0px;
 	display: flex;
-	z-index: 100;
 	align-items: center;
 	justify-content: center;
 }
 .calculator {
 	border: 2px solid black;
+	z-index: 100;
 	border-radius: 20px;
 	background-color: #5c54a4;
 }
@@ -278,7 +284,6 @@ body {
 		"- - - -"
 		"- - - -"
 		"-- -- equal equal";
-
 }
 
 .calculator form input:hover {
@@ -287,12 +292,12 @@ body {
 }
 .calculator form input {
 	border-radius: 10px;
-	background:var(--sidebar-color);
+	background: var(--sidebar-color);
 	transition: var(--trans-05);
 }
-.calculator form input:hover{
-	border-radius:20px;
-	background:rgb(247, 100, 218);
+.calculator form input:hover {
+	border-radius: 20px;
+	background: rgb(247, 100, 218);
 }
 .display {
 	border: none;
