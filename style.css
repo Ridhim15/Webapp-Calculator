@@ -11,7 +11,7 @@
 	--toggle-color: rgba(30, 30, 30, 255);
 	--toggle-color-light: #9babb8;
 	--text-color: white;
-	--button-color:rgb(85 ,26 ,139);
+	--button-color: rgb(85, 26, 139);
 	--backgradient: linear-gradient(#0c1445, #4c408e, #5c54a4);
 
 	/* ==== Trasitions ===== */
@@ -33,14 +33,14 @@ body {
 	width: 20px;
 	height: 20px;
 }
-.theme{
-	z-index:1;
-	background:transparent;
-}
-.theme.light{
-	position:fixed;
+.theme {
+	z-index: -1;
+	background: transparent;
+	position: absolute;
 	width: 100%;
 	height: 100vh;
+}
+.theme.light {
 	background: black;
 }
 
@@ -52,7 +52,7 @@ body {
 	width: 200px;
 	top: 0;
 	left: 0;
-	z-index:100;
+	z-index: 100;
 	background-color: white;
 	transition: var(--trans-05);
 }
@@ -95,13 +95,13 @@ body {
 
 .sidebar li {
 	list-style: none;
-	cursor:pointer;
+	cursor: pointer;
 	height: 50px;
 	margin-top: 10px;
 	padding-left: 10px;
 	background-color: white;
-	color:var(--button-color);
-	fill:var(--button-color);
+	color: var(--button-color);
+	fill: var(--button-color);
 	display: flex;
 	align-items: center;
 	transition: var(--trans-03);
@@ -127,7 +127,7 @@ body {
 	text-decoration: none;
 	height: 100%;
 	display: flex;
-	
+
 	align-items: center;
 	border-radius: 6px;
 	transition: var(--trans-02);
@@ -136,15 +136,14 @@ body {
 	height: 20px;
 	width: 20px;
 	display: flex;
-	margin-right:20px;
-	fill:var(--button-color);
+	margin-right: 20px;
+	fill: var(--button-color);
 	justify-content: center;
 	align-items: center;
 }
-.mode-switch{
+.mode-switch {
 	background: var(--sidebar-color);
 }
-
 
 /* After Toggle */
 .sidebar.close {
@@ -160,10 +159,6 @@ body {
 	margin-left: 20px;
 }
 
-
-
-
-
 /* ==== SideBar Right ==== */
 .Rightsidebar {
 	position: fixed;
@@ -171,7 +166,7 @@ body {
 	width: 200px;
 	top: 0;
 	right: 0;
-	z-index:100;
+	z-index: 100;
 	background-color: white;
 	transition: var(--trans-05);
 }
@@ -213,7 +208,7 @@ body {
 
 .Rightsidebar li {
 	list-style: none;
-	cursor:pointer;
+	cursor: pointer;
 	height: 50px;
 	margin-top: 10px;
 	padding-left: 10px;
@@ -266,12 +261,11 @@ body {
 /* ======= Calculator CSS ========= */
 
 .wrapper {
-	
 	width: 100%;
 	height: 100vh;
 	margin: 0px;
 	display: flex;
-	z-index:100;
+	z-index: 100;
 	align-items: center;
 	justify-content: center;
 }

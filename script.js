@@ -1,23 +1,18 @@
-const body=document.querySelectorAll('body');
-    sidebar = document.querySelector(".sidebar");
-    Rightsidebar = document.querySelector(".Rightsidebar");
-    toggleLeft = document.querySelector(".ltoggle");
-    toggleRight = document.querySelector(".rtoggle");
+const body = document.querySelectorAll("body");
+sidebar = document.querySelector(".sidebar");
+Rightsidebar = document.querySelector(".Rightsidebar");
+toggleLeft = document.querySelector(".ltoggle");
+toggleRight = document.querySelector(".rtoggle");
 
-      toggleLeft.addEventListener("click",() =>{
-        console.log("toggleLeft")
-        sidebar.classList.toggle("close");
-      });
-      
-      toggleRight.addEventListener("click",() =>{
-        console.log("toggleRight")
-        Rightsidebar.classList.toggle("close");
-      });
+toggleLeft.addEventListener("click", () => {
+	console.log("toggleLeft");
+	sidebar.classList.toggle("close");
+});
 
-
-
-
-
+toggleRight.addEventListener("click", () => {
+	console.log("toggleRight");
+	Rightsidebar.classList.toggle("close");
+});
 
 function updateDisplay(value) {
 	document.getElementById("display").value += value;

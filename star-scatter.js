@@ -1,15 +1,14 @@
 const modeswitch = document.querySelector(".mode-switch");
-const theme =document.querySelector(".theme");
-modeswitch.addEventListener("click", () =>{
-    console.log("mode switch clicked");
-    theme.classList.toggle("light");
+const theme = document.querySelector(".theme");
+modeswitch.addEventListener("click", () => {
+	console.log("mode switch clicked");
+	theme.classList.toggle("light");
+	theme.classList.toggle("dark");
 });
-
-
 
 const darkCanvas = document.querySelector("div.dark");
 
-for (let i = 0; i < 100; ++i) {
+for (let i = 0; i < 150; ++i) {
 	const div = document.createElement("div");
 	div.classList.add("star");
 
