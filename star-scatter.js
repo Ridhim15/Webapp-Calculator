@@ -1,9 +1,12 @@
 const modeswitch = document.querySelector(".mode-switch");
-
-modeswitch.addEventListener("Click", () =>{
+const theme =document.querySelector(".theme");
+modeswitch.addEventListener("click", () =>{
     console.log("mode switch clicked");
-    const mode = document.querySelector(".modes").toggle(".dark");
+    theme.classList.toggle("light");
 });
+
+
+
 const darkCanvas = document.querySelector("div.dark");
 
 for (let i = 0; i < 100; ++i) {
