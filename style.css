@@ -8,6 +8,7 @@
 	--sidebar-color: #c898ebfa;
 	--primary-color-light: #f6f5ff;
 	--primary-color: #d7c0ae;
+	--primary-color2:rgb(92 84 164);
 	--toggle-color: rgba(30, 30, 30, 255);
 	--toggle-color-light: #9babb8;
 	--text-color: white;
@@ -22,6 +23,15 @@
 }
 body {
 	background: var(--backgradient);
+	overflow:hidden;
+}
+.clouds{
+	position: absolute;
+    top: 90%;
+    width: 100%;
+    height: 109px;
+    padding: 0px;
+    margin: 0px;
 }
 .star {
 	position: absolute;

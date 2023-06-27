@@ -1,0 +1,46 @@
+{
+  "name": "klouds",
+  "version": "2.1.1",
+  "description": "Simple JavaScript library that generates animated clouds using WebGL",
+  "main": "lib/klouds.js",
+  "types": "lib/index.d.ts",
+  "homepage": "https://skyrim.github.io/klouds/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skyrim/klouds.git"
+  },
+  "bugs": {
+    "email": "skyrim@live.com",
+    "url": "https://github.com/skyrim/klouds/issues"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run build:dev && npm run build:prod",
+    "build:dev": "webpack",
+    "build:prod": "cross-env NODE_ENV=production webpack",
+    "clean": "rimraf lib"
+  },
+  "keywords": [
+    "cloud",
+    "animation",
+    "canvas",
+    "webgl"
+  ],
+  "author": "Stefan Stojković <skyrim@live.com> (https://stefan100.com)",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "prettier": "^2.0.5",
+    "raw-loader": "^4.0.1",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^8.0.2",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "files": [
+    "lib/**.*"
+  ]
+}
