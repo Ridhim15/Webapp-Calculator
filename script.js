@@ -1,4 +1,6 @@
-const body = document.querySelectorAll("body");
+
+/* Side-Bar Toggles  */
+
 sidebar = document.querySelector(".sidebar");
 Rightsidebar = document.querySelector(".Rightsidebar");
 toggleLeft = document.querySelector(".ltoggle");
@@ -14,6 +16,9 @@ toggleRight.addEventListener("click", () => {
 	Rightsidebar.classList.toggle("close");
 });
 
+
+
+/* Calculator  Display Functions using keyboard keys  */
 function updateDisplay(value) {
 	document.getElementById("display").value += value;
 }

@@ -4,16 +4,16 @@
 }
 :root {
 	/* ==== Colors ===== */
-	--body-color: rgba(0, 176, 255, 0.7);
-	--sidebar-color: #c898ebfa;
+	--sidebar-color: #fffffffa;
+	--calc-button:#c898ebfa;
 	--primary-color-light: #f6f5ff;
 	--primary-color: #d7c0ae;
-	--primary-color2:rgb(92 84 164);
+	--primary-color2: rgb(92 84 164);
 	--toggle-color: rgba(30, 30, 30, 255);
 	--toggle-color-light: #9babb8;
 	--text-color: white;
 	--button-color: rgb(85, 26, 139);
-	--backgradient: linear-gradient(#0c1445, #4c408e, #5c54a4);
+	--backgradient: linear-gradient(0deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 30%, rgb(252, 176, 69) 100%);
 
 	/* ==== Trasitions ===== */
 	--trans-03: all 0.2s ease;
@@ -21,38 +21,32 @@
 	--trans-04: all 0.4s ease;
 	--trans-05: all 0.5s ease;
 }
-body {
-	background: var(--backgradient);
-	overflow:hidden;
+
+body{
+	background:var(--backgradient);
+	overflow: hidden;
+	transition: var(--trans-05);
 }
-.clouds{
-	position: absolute;
-    top: 90%;
-    width: 100%;
-    height: 109px;
-    padding: 0px;
-    margin: 0px;
+body.dark_theme{
+	--sidebar-color: #c898ebfa;
+	--calc-button:#c898ebfa;
+	--primary-color-light: #ffffff;
+	--primary-color: #d7c0ae;
+	--primary-color2: rgb(92 84 164);
+	--toggle-color: rgba(30, 30, 30, 255);
+	--toggle-color-light: #9babb8;
+	--text-color: white;
+	--button-color: rgb(85, 26, 139);
+	--backgradient: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(11, 11, 105, 1) 70%,
+		rgba(17, 150, 177, 1) 100%
+	);
+	transition: var(--trans-05);
+	
 }
-.star {
-	position: absolute;
-	top: 50%;
-	right: 50%;
-	z-index: 1;
-	background: url(./Images/star.svg) repeat top center;
-	background-size: cover;
-	width: 20px;
-	height: 20px;
-}
-.theme {
-	z-index: -1;
-	background: transparent;
-	position: absolute;
-	width: 100%;
-	height: 100vh;
-}
-.theme.light {
-	background: black;
-}
+
 
 /* ======= Sidebar CSS ========= */
 
@@ -63,7 +57,7 @@ body {
 	top: 0;
 	left: 0;
 	z-index: 100;
-	background-color: white;
+	background-color:var(--sidebar-color);
 	transition: var(--trans-05);
 }
 
@@ -109,7 +103,6 @@ body {
 	height: 50px;
 	margin-top: 10px;
 	padding-left: 10px;
-	background-color: white;
 	color: var(--button-color);
 	fill: var(--button-color);
 	display: flex;
@@ -151,9 +144,6 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-.mode-switch {
-	background: var(--sidebar-color);
-}
 
 /* After Toggle */
 .sidebar.close {
@@ -177,7 +167,7 @@ body {
 	top: 0;
 	right: 0;
 	z-index: 100;
-	background-color: white;
+	background-color: var(--sidebar-color);
 	transition: var(--trans-05);
 }
 .Rightsidebar header {
@@ -222,7 +212,6 @@ body {
 	height: 50px;
 	margin-top: 10px;
 	padding-left: 10px;
-	background-color: white;
 	display: flex;
 	align-items: center;
 	transition: var(--trans-03);
@@ -282,8 +271,9 @@ body {
 .calculator {
 	border: 2px solid black;
 	z-index: 100;
-	border-radius: 20px;
 	background-color: #5c54a4;
+	border-radius: 20px;
+	box-shadow: -10px 10px 30px #8c6aa5, 5px -5px 30px #ffc6ff;
 }
 .calculator form {
 	border-radius: 20px;
@@ -308,11 +298,11 @@ body {
 }
 .calculator form input {
 	border-radius: 10px;
-	background: var(--sidebar-color);
+	background: var(--calc-button);
 	transition: var(--trans-05);
 }
 .calculator form input:hover {
-	border-radius: 20px;
+	scale: 1.05;
 	background: rgb(247, 100, 218);
 }
 .display {

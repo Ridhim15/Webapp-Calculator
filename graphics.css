@@ -1,0 +1,24 @@
+/* ===== Clouds and Stars ===== */
+
+.clouds {
+	position: absolute;
+	top: 80%;
+	width: 100%;
+	height: 11em;
+	padding: 0px;
+	margin: 0px;
+}
+.star {
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	z-index: 1;
+	background: url(./Images/star.svg);
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+}
+
+/* ===== Toggle switch mode ===== */
+
+
