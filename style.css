@@ -1,87 +1,92 @@
 * {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
+
 :root {
-	/* ==== Colors ===== */
+	/* Colors */
 	--sidebar-color: #fffffffa;
-	--calc-button:#c898ebfa;
+	--calc-button: #c898ebfa;
 	--primary-color-light: #f6f5ff;
 	--primary-color: #d7c0ae;
-	--primary-color2: rgb(92 84 164);
-	--toggle-color: rgba(30, 30, 30, 255);
+	--primary-color2: #5c54a4;
+	--toggle-color: rgba(30, 30, 30, 1);
 	--toggle-color-light: #9babb8;
 	--text-color: white;
-	--button-color: rgb(85, 26, 139);
-	--backgradient: linear-gradient(0deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 30%, rgb(252, 176, 69) 100%);
+	--button-color: #551a8b;
+	--backgradient: linear-gradient(0deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 30%, rgb(252, 176, 69) 100%);
 
-	/* ==== Trasitions ===== */
+	/* Transitions */
 	--trans-03: all 0.2s ease;
 	--trans-02: all 0.3s ease;
 	--trans-04: all 0.4s ease;
 	--trans-05: all 0.5s ease;
 }
 
-body{
-	background:var(--backgradient);
+body {
+	background: var(--backgradient);
 	overflow: hidden;
 	transition: var(--trans-05);
 }
-body.dark_theme{
+
+body.dark_theme {
 	--sidebar-color: #c898ebfa;
-	--calc-button:#c898ebfa;
+	--calc-button: #c898ebfa;
 	--primary-color-light: #ffffff;
 	--primary-color: #d7c0ae;
-	--primary-color2: rgb(92 84 164);
-	--toggle-color: rgba(30, 30, 30, 255);
+	--primary-color2: #5c54a4;
+	--toggle-color: rgba(30, 30, 30, 1);
 	--toggle-color-light: #9babb8;
 	--text-color: white;
-	--button-color: rgb(85, 26, 139);
-	--backgradient: linear-gradient(
-		180deg,
-		rgba(0, 0, 0, 1) 0%,
-		rgba(11, 11, 105, 1) 70%,
-		rgba(17, 150, 177, 1) 100%
-	);
+	--button-color: #551a8b;
+	--backgradient: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(11, 11, 105, 1) 70%, rgba(17, 150, 177, 1) 100%);
 	transition: var(--trans-05);
-	
 }
 
-
-/* ======= Sidebar CSS ========= */
-
-.sidebar {
+/* Sidebar CSS */
+.sidebar{
+	top: 0;
+	left: 0;
+}
+.sidebar,
+.Rightsidebar{
 	position: fixed;
 	height: 100vh;
 	width: 200px;
-	top: 0;
-	left: 0;
 	z-index: 100;
-	background-color:var(--sidebar-color);
+	background-color: var(--sidebar-color);
 	transition: var(--trans-05);
 }
 
-.sidebar header {
+.sidebar header ,
+.Rightsidebar header{
 	position: relative;
 }
-.sidebar .logo {
+
+.sidebar .logo ,
+.Rightsidebar .logo{
 	display: flex;
 	padding: 20px;
 }
-.sidebar .logo img {
-	display: flex;
+
+.sidebar .logo img{
 	width: 50px;
 	height: 50px;
 	border-radius: 6px;
 }
-.sidebar .logo span {
+
+.sidebar .logo span ,
+.Rightsidebar .logo span {
 	display: flex;
 	flex-direction: column;
 	padding-left: 20px;
 	justify-content: center;
 	align-items: center;
 }
-.sidebar header .toggle {
+
+.sidebar header .toggle ,
+.Rightsidebar header .toggle {
 	position: absolute;
 	top: 50%;
 	right: -30px;
@@ -97,7 +102,8 @@ body.dark_theme{
 	border-radius: 50%;
 }
 
-.sidebar li {
+.sidebar li ,
+.Rightsidebar li{
 	list-style: none;
 	cursor: pointer;
 	height: 50px;
@@ -109,32 +115,43 @@ body.dark_theme{
 	align-items: center;
 	transition: var(--trans-03);
 }
-.sidebar li:hover {
+
+.sidebar li:hover,
+.Rightsidebar li:hover {
 	border-radius: 6px;
 	box-shadow: 0px 1px 1px 1px;
 	background: var(--sidebar-color);
 }
-.sidebar li a:hover {
+
+.sidebar li a:hover ,
+.Rightsidebar li a:hover {
 	color: black;
 }
-.sidebar li .icon {
+
+.sidebar li .icon,
+.Rightsidebar li .icon {
 	font-size: 20px;
 	margin-right: 20px;
 }
-.sidebar .home {
+
+.sidebar .home ,
+.Rightsidebar .home {
 	background: var(--primary-color-light);
 	margin-bottom: 30px;
 }
+
 .sidebar li .icon,
-.sidebar li a {
+.sidebar li a ,
+.Rightsidebar li .icon,
+.Rightsidebar li a{
 	text-decoration: none;
 	height: 100%;
 	display: flex;
-
 	align-items: center;
 	border-radius: 6px;
 	transition: var(--trans-02);
 }
+
 .menu-bar .mode .moon-sun {
 	height: 20px;
 	width: 20px;
@@ -146,128 +163,52 @@ body.dark_theme{
 }
 
 /* After Toggle */
-.sidebar.close {
+.sidebar.close,
+.Rightsidebar.close {
 	width: 80px;
 }
 
-.sidebar.close .text {
+.sidebar.close .text ,
+.Rightsidebar.close  .text {
 	opacity: 0;
 	overflow: hidden;
 }
+
 .sidebar.close .icon,
+.Rightsidebar.close .icon, 
 .sidebar.close .moon-sun {
 	margin-left: 20px;
 }
 
-/* ==== SideBar Right ==== */
-.Rightsidebar {
-	position: fixed;
-	height: 100vh;
-	width: 200px;
+/* SideBar Right */
+.Rightsidebar{
 	top: 0;
 	right: 0;
-	z-index: 100;
-	background-color: var(--sidebar-color);
-	transition: var(--trans-05);
-}
-.Rightsidebar header {
-	position: relative;
-}
-.Rightsidebar .logo {
-	display: flex;
-	padding: 20px;
-}
-.Rightsidebar .logo img {
-	display: flex;
-	width: 50px;
-	height: 50px;
-	border-radius: 6px;
-}
-.Rightsidebar .logo span {
-	display: flex;
-	flex-direction: column;
-	padding-left: 20px;
-	justify-content: center;
-	align-items: center;
-}
-.Rightsidebar header .toggle {
-	position: absolute;
-	top: 50%;
-	left: -30px;
-	transform: translateY(-50%);
-	height: 40px;
-	width: 40px;
-	font-size: 20px;
-	background-color: var(--toggle-color);
-	color: var(--text-color);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 50%;
 }
 
-.Rightsidebar li {
-	list-style: none;
-	cursor: pointer;
-	height: 50px;
-	margin-top: 10px;
-	padding-left: 10px;
-	display: flex;
-	align-items: center;
-	transition: var(--trans-03);
+.Rightsidebar header .toggle {
+	left: -30px;
 }
-.Rightsidebar li:hover {
-	border-radius: 6px;
-	box-shadow: 0px 1px 1px 1px;
-	background: var(--sidebar-color);
-}
-.Rightsidebar li a:hover {
-	color: black;
-}
+ 
 #rlogo {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 30px;
 }
-.Rightsidebar li .icon {
-	font-size: 20px;
-	margin-right: 20px;
-}
-.Rightsidebar .home {
-	background: var(--primary-color-light);
-	margin-bottom: 30px;
-}
-.Rightsidebar li .icon,
-.Rightsidebar li a {
-	text-decoration: none;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	border-radius: 6px;
-	transition: var(--trans-02);
-}
-.Rightsidebar.close {
-	width: 80px;
-}
-.Rightsidebar.close .text {
-	opacity: -0;
-}
-.Rightsidebar.close .icon {
-	margin-left: 20px;
-}
 
-/* ======= Calculator CSS ========= */
 
+/* ==== Calculator CSS ===== */
 .wrapper {
 	width: 100%;
 	height: 100vh;
-	margin: 0px;
+	margin: 0;
 	display: flex;
 	z-index: 100;
 	align-items: center;
 	justify-content: center;
 }
+
 .calculator {
 	border: 2px solid black;
 	z-index: 100;
@@ -275,6 +216,7 @@ body.dark_theme{
 	border-radius: 20px;
 	box-shadow: -10px 10px 30px #8c6aa5, 5px -5px 30px #ffc6ff;
 }
+
 .calculator form {
 	border-radius: 20px;
 	display: grid;
@@ -296,19 +238,22 @@ body.dark_theme{
 	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
 		0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
+
 .calculator form input {
 	border-radius: 10px;
 	background: var(--calc-button);
 	transition: var(--trans-05);
 }
+
 .calculator form input:hover {
-	scale: 1.05;
+	transform: scale(1.05);
 	background: rgb(247, 100, 218);
 }
+
 .display {
 	border: none;
 	background: transparent;
-	padding: 0px 20px;
+	padding: 0 20px;
 	text-align: right;
 	color: white;
 	font-size: 30px;

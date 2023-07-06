@@ -1,3 +1,21 @@
+/* Generating Stars */
+const darkCanvas = document.querySelector("div.dark");
+
+for (let i = 0; i < 300; ++i) {
+	const div = document.createElement("div");
+	div.classList.add("star");
+
+	const sizeFactor = Math.random() * 1.5;
+	div.style.width = `${5 * sizeFactor}px`;
+	div.style.height = `${5 * sizeFactor}px`;
+
+	div.style.top = `${100 * Math.random()}%`;
+	div.style.right = `${100 * Math.random()}%`;
+
+	darkCanvas.appendChild(div);
+}
+
+
 /* For Clouds */
 const body = document.querySelector('body');
 const LIGHT_BG_COLOR = "rgb(217 37 73)";
@@ -21,20 +39,3 @@ modeswitch.addEventListener("click", () => {
 	if (theme.classList.contains("light")) mySky.setBgColor(LIGHT_BG_COLOR);
 	else mySky.setBgColor(DARK_BG_COLOR);
 });
-
-/* Generating Stars */
-const darkCanvas = document.querySelector("div.dark");
-
-for (let i = 0; i < 300; ++i) {
-	const div = document.createElement("div");
-	div.classList.add("star");
-
-	const sizeFactor = Math.random() * 1.5;
-	div.style.width = `${5 * sizeFactor}px`;
-	div.style.height = `${5 * sizeFactor}px`;
-
-	div.style.top = `${100 * Math.random()}%`;
-	div.style.right = `${100 * Math.random()}%`;
-
-	darkCanvas.appendChild(div);
-}
