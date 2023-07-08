@@ -101,8 +101,8 @@
   <div class="wrapper">
     <div class="calculator">
       <form>
-        <input type="text" id="display" class="display">
-        <input type="button" class="all-clear" value="AC" presskey="c" onclick="display.value=''">
+        <textarea id="calcdisplay" class="display"></textarea>
+        <input type="button" class="all-clear" value="AC" presskey="c" onclick="cleardisplay()">
         <input type="button" class="del" value="DC" presskey="Backspace" onclick="del()">
         <input type="button" class="percent" value="%" onclick="updateDisplay('%')">
         <input type="button" class="operator" value="/" onclick="updateDisplay('/')">
