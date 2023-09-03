@@ -4,7 +4,7 @@ const darkCanvas = document.querySelector("div.dark");
 for (let i = 0; i < 300; ++i) {
 	const div = document.createElement("div");
 	div.classList.add("star");
-
+	const layer = Math.floor(Math.random() * 2) + 1;
 	const sizeFactor = Math.random() * 1.5;
 	div.style.width = `${5 * sizeFactor}px`;
 	div.style.height = `${5 * sizeFactor}px`;

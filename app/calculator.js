@@ -4,7 +4,7 @@ Array.prototype.peek = function () {
 
 class Calculator {
 	constructor(expr) {
-		this.expr = expr.replaceAll(/\s/g,"") + ")";
+		this.expr = expr.replaceAll(/\s/g,"") + ")"; // Removing all spaces and adding ) at last
 		this.numStack = [];
 		this.opStack = ["("];
 	}
@@ -53,7 +53,7 @@ class Calculator {
 			//Debugging 
 			/* console.log("Symbol Scanned : ", this.expr[i]); */
 			
-			if (this.expr[i] >= "0" && this.expr[i] <= "9") {
+			if (this.expr[i] >= "0" && this.expr[i] <= "9") {  // if current char is a number add to number
 				num += this.expr[i];
 				if (
 					this.expr.length == i + 1 ||

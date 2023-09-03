@@ -17,19 +17,24 @@ toggleRight.addEventListener("click", () => {
 });
 
 
-
+const calcdisplay = document.getElementById("calcdisplay");
 /* Calculator  Display Functions using keyboard keys  */
+function cleardisplay(){
+	calcdisplay.value =" ";
+	calcdisplay.style.height = "3em";
+}
 function updateDisplay(value) {
-	document.getElementById("display").value += value;
+	calcdisplay.value += value;
+	calcdisplay.dispatchEvent(new Event('input')); 
 }
 function del() {
-	var str = document.getElementById("display").value.toString().slice(0, -1);
-	document.getElementById("display").value = str;
+	var str = calcdisplay.value.toString().slice(0, -1);
+	calcdisplay.value = str;
 }
 function CalculateVal() {
-	var displayValue = document.getElementById("display").value;
+	var displayValue = calcdisplay.value;
 	var result = new Calculator(displayValue).calculate();
-	document.getElementById("display").value = result;
+	calcdisplay.value = result;
 }
 
 // Creating a Hashmap from the array of DOM objects
@@ -58,3 +63,14 @@ document.addEventListener("keydown", function (event) {
 		clickDataset[event.key.toLowerCase()].click();
 	}
 });
+
+
+
+/* Resizing Calculator Display */
+calcdisplay.addEventListener("input", (e) => {
+	calcdisplay.style.height = "auto";
+	let scheight = e.target.scrollHeight;
+	console.log(scheight);
+	calcdisplay.style.height = `${scheight}px`;
+  });
+  

@@ -10,9 +10,6 @@
 }
 .star {
 	position: absolute;
-	top: 50%;
-	right: 50%;
-	z-index: 1;
 	background: url(./Images/star.svg);
 	background-size: cover;
 	width: 20px;

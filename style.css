@@ -32,7 +32,21 @@ body {
 	overflow: hidden;
 	transition: var(--trans-05);
 }
-
+.blur{
+	z-index: 1;
+	position:absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height:17em;
+	width: 60%;
+	font-size:30px;
+	background-color: rgba(255,255,255,0.03);
+	border-radius: 30px;
+	color: white;
+	backdrop-filter: blur(8px);
+	box-shadow:0px 0px 6px 0px rgba(255, 255, 255, 0.5);
+}
 body.dark_theme {
 	--sidebar-color: #c898ebfa;
 	--calc-button: #c898ebfa;
@@ -57,7 +71,7 @@ body.dark_theme {
 	position: fixed;
 	height: 100vh;
 	width: 200px;
-	z-index: 100;
+	z-index: 3;
 	background-color: var(--sidebar-color);
 	transition: var(--trans-05);
 }
@@ -160,6 +174,9 @@ body.dark_theme {
 	object-fit: contain;
 	transition: var(--trans-03);
 }
+.menu-bar .mode a{
+	margin-right:15px;
+}
 
 /* After Toggle */
 .sidebar.close,
@@ -201,16 +218,14 @@ body.dark_theme {
 .wrapper {
 	width: 100%;
 	height: 100vh;
-	margin: 0;
 	display: flex;
-	z-index: 100;
 	align-items: center;
 	justify-content: center;
 }
 
 .calculator {
 	border: 2px solid black;
-	z-index: 100;
+	z-index: 4;
 	background-color: #5c54a4;
 	border-radius: 20px;
 	box-shadow: -10px 10px 30px #8c6aa5, 5px -5px 30px #ffc6ff;
@@ -220,10 +235,13 @@ body.dark_theme {
 	border-radius: 20px;
 	display: grid;
 	padding: 20px;
-	grid-template-columns: repeat(4, 50px);
-	grid-auto-rows: minmax(50px, auto);
 	grid-row-gap: 10px;
 	grid-column-gap: 10px;
+}
+#standard-calc{
+	grid-template-columns: repeat(4, 50px);
+	grid-auto-rows: minmax(50px, auto);
+	
 	grid-template-areas:
 		"header header header header"
 		"- - - -"
@@ -233,33 +251,43 @@ body.dark_theme {
 		"-- -- equal equal";
 }
 
-.calculator form input:hover {
-	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-		0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
 
-.calculator form input {
+.calculator form input ,
+.calculator form .display {
 	border-radius: 10px;
 	background: var(--calc-button);
 	transition: var(--trans-05);
 }
 
-.calculator form input:hover {
+.calculator form input:hover ,
+.calculator form .display:hover{
 	transform: scale(1.05);
 	background: rgb(247, 100, 218);
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+		0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
+
 
 .display {
 	border: none;
-	background: transparent;
-	padding: 0 20px;
-	text-align: right;
+	padding: 10px;
 	color: white;
-	font-size: 30px;
+	font-size: 20px;
 	font-family: Belanosima;
 	grid-area: header;
+	
 }
 
 #equal {
 	grid-area: equal;
+}
+#calcdisplay{
+	width: 100%;
+	height:3em;
+	max-height:200px;
+	outline:none;
+	resize:none;
+}
+#calcdisplay::-webkit-scrollbar{
+	width:0px;
 }
