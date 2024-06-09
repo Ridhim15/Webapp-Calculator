@@ -24,6 +24,3 @@ Clone the repository to your local machine:
 git clone https://github.com/Ridhim15/Webapp-Calculator
 cd Webapp-Calculator
 ```
-## Contributing
-
-Contributions to Webapp-Calculator are welcome! Whether it involves fixing bugs, adding new features, or improving the documentation, we value your input. Please feel free to fork the repository and submit pull requests.
